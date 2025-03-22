@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KeluargaAI Telegram Bot Mockup</title>
+  <style>
+    body {
+      font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f5f5;
+      color: #333;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    
+    .header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    
+    .header h1 {
+      color: #0088cc;
+      margin-bottom: 5px;
+    }
+    
+    .header p {
+      color: #666;
+      margin-top: 0;
+    }
+    
+    .mockup-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+    
+    .phone {
+      width: 320px;
+      height: 640px;
+      background-color: white;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      position: relative;
+    }
+    
+    .phone-header {
+      background-color: #ffffff;
+      color: rgb(0, 0, 0);
+      padding: 15px;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    .phone-subheader {
+      color: grey;
+      text-align: center;
+      font-size: small;
+      font-weight: lighter;
+    }
+    
+    .chat-container {
+      height: calc(100% - 150px);
+      overflow-y: auto;
+      padding: 10px;
+      background-color: #e6ebee;
+    }
+    
+    .message {
+      max-width: 75%;
+      padding: 8px 12px;
+      border-radius: 10px;
+      margin-bottom: 10px;
+      position: relative;
+      word-wrap: break-word;
+    }
+    
+    .bot-message {
+      background-color: white;
+      margin-right: auto;
+      border-top-left-radius: 0;
+    }
+
+    .message-date{
+      background-color: rgba(0, 0, 0, 0.1);
+      font-size: 13px;
+      text-align: center;
+      margin: auto;
+      max-width: 20%;
+      padding: 8px 12px;
+      margin-bottom: 20px;
+    }
+
+    .bot-intro {
+      background-color: white;
+      margin: auto;
+      margin-bottom: 20px;
+    }
+    
+    .user-message {
+      background-color: #dcf8c6;
+      margin-left: auto;
+      border-top-right-radius: 0;
+    }
+    
+    .buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 10px;
+    }
+    
+    .button {
+      background-color: white;
+      border: 1px solid #ddd;
+      border-radius: 15px;
+      padding: 8px 15px;
+      text-align: center;
+      cursor: pointer;
+      font-size: 14px;
+      color: #0088cc;
+    }
+    
+    .button:hover {
+      background-color: #f0f0f0;
+    }
+    
+    .phone-footer {
+      position: absolute;
+      bottom: 0;
+      width: 90%;
+      background-color: white;
+      padding: 10px;
+      border-top: 1px solid #ddd;
+      display: flex;
+    }
+    
+    .input-field {
+      flex: 1;
+      border: 1px solid #ddd;
+      border-radius: 20px;
+      padding: 8px 15px;
+      margin-right: 10px;
+      background-color: #f5f5f5;
+    }
+    
+    .send-button {
+      width: 36px;
+      height: 36px;
+      background-color: #0088cc;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+    }
+    
+    .section-title {
+      text-align: center;
+      margin: 30px 0 15px;
+      color: #0088cc;
+    }
+    
+    .command-info {
+      background-color: white;
+      border-radius: 10px;
+      padding: 15px;
+      margin-bottom: 20px;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    .command-info h3 {
+      color: #0088cc;
+      margin-top: 0;
+    }
+    
+    .profile-card {
+      background-color: white;
+      border-radius: 10px;
+      padding: 15px;
+      margin-top: 10px;
+    }
+    
+    .profile-field {
+      margin-bottom: 5px;
+    }
+    
+    .profile-label {
+      font-weight: bold;
+      color: #0088cc;
+    }
+    
+    .timestamp {
+      font-size: 11px;
+      color: #999;
+      margin-top: 3px;
+      text-align: right;
+    }
+    
+    .schedule-info {
+      background-color: #e3f1fd;
+      border-radius: 10px;
+      padding: 10px;
+      margin-top: 10px;
+      font-size: 13px;
+      color: #0088cc;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>KeluargaAI Telegram Bot</h1>
+      <p>Bring Families closer and grow together in the digital era.</p>
+    </div>
+    
+    <div class="mockup-container">
+      <!-- Individual Chat -->
+      <div class="phone">
+        <div class="phone-header">
+          KeluargaAI
+          <div class="phone-subheader">bot</div>
+        </div>
+        <div class="chat-container">
+          <div class="message bot-intro">
+            Selamat datang! I'm KeluargaAI, your family companion designed to strengthen the bonds between families in Singapore. <br><br>
+In today's busy world, I'm here to help your family stay connected, celebrate traditions, and create meaningful moments together. <br><br>Whether you're looking for activities to do as a family, or ways to connect across generations, I'm here to assist.
+          </div>
+          <div class="message message-date">March 21</div>
+          <div class="message bot-message">
+            Use /profile to view or edit your personal profile.
+          </div>
+          
+          <div class="message user-message">
+            /profile
+          </div>
+          
+          <div class="message bot-message">
+            Profile Menu:
+            <div class="buttons">
+              <div class="button">View my profile</div>
+              <div class="button">Edit my profile</div>
+              <div class="button">Exit menu</div>
+            </div>
+          </div>
+          
+          <div class="message user-message">
+            View my profile
+          </div>
+          
+          <div class="message bot-message">
+            You currently have no profile saved. Please create your profile.
+            <div class="buttons">
+              <div class="button">Edit my profile</div>
+            </div>
+          </div>
+          
+          <div class="message user-message">
+            Edit my profile
+          </div>
+          
+          <div class="message bot-message">
+            Let's set up your profile! I'll ask you a few questions.
+            
+            Question 1: What is your nickname in the family?
+          </div>
+          
+          <div class="message user-message">
+            Abang
+          </div>
+          
+          <div class="message bot-message">
+            Question 2: What is your occupation?
+          </div>
+          
+          <div class="message user-message">
+            Software Engineer
+          </div>
+          
+          <div class="message bot-message">
+            Question 3: What are your hobbies?
+          </div>
+          
+          <div class="message user-message">
+            Gaming, hiking, photography
+          </div>
+          
+          <div class="message bot-message">
+            Question 4: What food do you like to eat?
+          </div>
+          
+          <div class="message user-message">
+            Nasi lemak, roti prata, laksa
+          </div>
+          
+          <div class="message bot-message">
+            Question 5: What food do you dislike to eat?
+          </div>
+          
+          <div class="message user-message">
+            Durian, bitter gourd
+          </div>
+          
+          <div class="message bot-message">
+            Question 6: What are you allergic to?
+          </div>
+          
+          <div class="message user-message">
+            Shellfish
+          </div>
+          
+          <div class="message bot-message">
+            Thanks! Your profile has been saved successfully.
+            
+            <div class="profile-card">
+              <div class="profile-field">
+                <span class="profile-label">Nickname:</span> Abang
+              </div>
+              <div class="profile-field">
+                <span class="profile-label">Occupation:</span> Software Engineer
+              </div>
+              <div class="profile-field">
+                <span class="profile-label">Hobbies:</span> Gaming, hiking, photography
+              </div>
+              <div class="profile-field">
+                <span class="profile-label">Food likes:</span> Nasi lemak, roti prata, laksa
+              </div>
+              <div class="profile-field">
+                <span class="profile-label">Food dislikes:</span> Durian, bitter gourd
+              </div>
+              <div class="profile-field">
+                <span class="profile-label">Allergies:</span> Shellfish
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="phone-footer">
+          <div class="input-field">Type a message...</div>
+          <div class="send-button">➤</div>
+        </div>
+      </div>
+      
+      <!-- Group Chat -->
+      <div class="phone">
+        <div class="phone-header">
+          Keluarga Bahagia
+          <div class="phone-subheader">5 members</div>
+        </div>
+        <div class="chat-container">
+          <div class="message bot-message">            Selamat pagi Keluarga Bahagia! I'm KeluargaAI, your family assistant. 
+            <br><br>
+            Use my commands to help plan family meals, activities, and reflection time together.
+            <br><br>🍚 /makan - Decide what and where to eat
+            <br><br>📅 /jomxz - Find activities based on interests
+            <br><br>💬 /sembang - Schedule family reflection time</div>
+          
+          <div class="message user-message">
+            /makan
+            <div class="timestamp">Ayah - 12:30 PM</div>
+          </div>
+          
+          <div class="message bot-message">
+            I'm checking preferences for all family members in this group...
+            <br><br>
+            Based on everyone's food preferences and allergies, here are some recommendations:
+            <br><br>
+            <b>Recommended Dish:</b> Nasi Lemak family set (safe for everyone, and a favorite of Abang and Kakak)
+            <br><br>
+            <b>Restaurant Options:</b>
+            <br>
+            1. Selera Rasa Nasi Lemak (Geylang)<br>
+            2. Punggol Nasi Lemak (Tanjong Katong)<br>
+            3. The Coconut Club (Ann Siang)
+            <br><br>
+            <b>Considerations:</b><br>
+            • Adik is allergic to peanuts (all recommended places offer peanut-free options)<br>
+            • Ayah prefers spicy food (all locations have sambal options)<br>
+            • Abang has shellfish allergy (all recommended dishes are shellfish-free)
+            <br><br>
+            Would you like more options or information about any of these places?
+          </div>
+          
+          <div class="message user-message">
+            /jomxz
+            <div class="timestamp">Kakak - 1:45 PM</div>
+          </div>
+          
+          <div class="message bot-message">
+            Looking at everyone's hobbies and interests...
+            <br><br>
+            <b>Family Activity Suggestions:</b>
+            <br><br>
+            1. <b>Photography Walk at Gardens by the Bay</b><br>
+            • Perfect for Abang's photography hobby<br>
+            • Adik and Kakak can enjoy the outdoor environment<br>
+            • Ibu's interest in flowers is covered<br>
+            <br>
+            2. <b>Board Game Café Visit</b><br>
+            • Matches Adik and Ayah's gaming interests<br>
+            • Indoor activity for hot weather<br>
+            • Food options available for everyone<br>
+            <br>
+            3. <b>East Coast Park Cycling</b><br>
+            • Outdoor activity for everyone<br>
+            • Combines Ibu's cycling hobby<br>
+            • Food options nearby that match family preferences<br>
+            <br>
+            Which activity sounds most interesting to everyone?
+          </div>
+          
+          <div class="message user-message">
+            /sembang
+            <div class="timestamp">Ibu - 8:15 PM</div>
+          </div>
+          
+          <div class="message bot-message">
+            You've initiated family reflection time. First, let's set up a schedule for regular reflections.
+            
+            How often would you like to have family reflection time?
+            <div class="buttons">
+              <div class="button">Daily</div>
+              <div class="button">Weekly</div>
+              <div class="button">Monthly</div>
+              <div class="button">Custom</div>
+            </div>
+          </div>
+          
+          <div class="message user-message">
+            Weekly
+            <div class="timestamp">Ibu - 8:16 PM</div>
+          </div>
+          
+          <div class="message bot-message">
+            Which day of the week works best for everyone?
+            <div class="buttons">
+              <div class="button">Monday</div>
+              <div class="button">Tuesday</div>
+              <div class="button">Wednesday</div>
+              <div class="button">Thursday</div>
+              <div class="button">Friday</div>
+              <div class="button">Saturday</div>
+              <div class="button">Sunday</div>
+            </div>
+          </div>
+          
+          <div class="message user-message">
+            Sunday
+            <div class="timestamp">Ibu - 8:17 PM</div>
+          </div>
+          
+          <div class="message bot-message">
+            What time would be good for everyone?
+            <div class="buttons">
+              <div class="button">7:00 PM</div>
+              <div class="button">8:00 PM</div>
+              <div class="button">9:00 PM</div>
+              <div class="button">Custom time</div>
+            </div>
+          </div>
+          
+          <div class="message user-message">
+            7:00 PM
+            <div class="timestamp">Ibu - 8:18 PM</div>
+          </div>
+          
+          <div class="message bot-message">
+            Great! I've scheduled family reflection time for every Sunday at 7:00 PM.
+            
+            <div class="schedule-info">
+              ✓ Family Reflection: Every Sunday at 7:00 PM
+            </div>
+            <br>
+            Let's start with today's reflection. Everyone please share:
+            <br>
+            1. One highlight from your week<br>
+            2. One challenge you faced<br>
+            3. Something you're looking forward to next week<br>
+            <br>
+            Who would like to start?
+          </div>
+          
+          <div class="message user-message">
+            My highlight was our family breakfast on Wednesday. Challenge was the traffic jam on Thursday that made me late for work. Looking forward to visiting nenek next weekend!
+            <div class="timestamp">Ayah - 8:20 PM</div>
+          </div>
+          
+          <div class="message bot-message">
+            Thank you for sharing, Ayah! Who would like to go next?
+          </div>
+        </div>
+        <div class="phone-footer">
+          <div class="input-field">Type a message...</div>
+          <div class="send-button">➤</div>
+        </div>
+      </div>
+    </div>
+    
+    <h2 class="section-title">Key Features</h2>
+    
+    <div class="command-info">
+      <h3>/profile Command (Individual Chat)</h3>
+      <p>Users set up their profile with nickname, occupation, hobbies, food preferences, and allergies. This information is used in group settings to provide personalized recommendations.</p>
+    </div>
+    
+    <div class="command-info">
+      <h3>/makan Command (Group Chat)</h3>
+      <p>Suggests food options and dining venues based on each family member's stored preferences and allergies. Considers everyone's dietary restrictions to recommend suitable options for family meals.</p>
+    </div>
+    
+    <div class="command-info">
+      <h3>/jomxz Command (Group Chat)</h3>
+      <p>Recommends family activities and outings based on each member's hobbies and interests. Provides options that align with multiple family members' preferences.</p>
+    </div>
+    
+    <div class="command-info">
+      <h3>/sembang Command (Group Chat)</h3>
+      <p>Sets up scheduled family reflection time. Families can choose frequency, day, and time for regular check-ins. The bot prompts reflection questions to facilitate family discussions and bonding.</p>
+    </div>
+
+    <h2 class="section-title">Future Improvements</h2>
+    
+    <div class="command-info">
+      <h3>/game Command (Group Chat)</h3>
+      <p>KeluargaAI can facilitate family game time by prompting turn-based games such as Wordle, teka teki, quizzes etc.</p>
+    </div>
+    
+    <div class="command-info">
+      <h3>/workshops Command (Group Chat)</h3>
+      <p>Suggests upcoming and ongoing workshops for families to attend. The bot can also provide bite-sized information of what the workshop entails.</p>
+    </div>
+  </div>
+</body>
+</html>
