@@ -217,20 +217,21 @@
 <body>
   <div class="container">
     <div class="header">
-      <h1>KeluargaAI Telegram Bot</h1>
+      <h1>KeluargAI Telegram Bot</h1>
       <p>Bring Families closer and grow together in the digital era.</p>
     </div>
     
     <div class="mockup-container">
-      <!-- Individual Chat -->
+
+      <!-- Individual Chat as a Parent -->
       <div class="phone">
         <div class="phone-header">
-          KeluargaAI
+          KeluargAI
           <div class="phone-subheader">bot</div>
         </div>
         <div class="chat-container">
           <div class="message bot-intro">
-            Selamat datang! I'm KeluargaAI, your family companion designed to strengthen the bonds between families in Singapore. <br><br>
+            Selamat datang! I'm KeluargAI, your family companion designed to strengthen the bonds between families in Singapore. <br><br>
 In today's busy world, I'm here to help your family stay connected, celebrate traditions, and create meaningful moments together. <br><br>Whether you're looking for activities to do as a family, or ways to connect across generations, I'm here to assist.
           </div>
           <div class="message message-date">March 21</div>
@@ -243,36 +244,119 @@ In today's busy world, I'm here to help your family stay connected, celebrate tr
           </div>
           
           <div class="message bot-message">
-            👤 Your Family Profile
+            Profile Menu:
+            <div class="buttons">
+              <div class="button">View my profile</div>
+              <div class="button">Edit my profile</div>
+              <div class="button">Exit menu</div>
+            </div>
+          </div>
+          
+          <div class="message user-message">
+            View my profile
+          </div>
+          
+          <div class="message bot-message">
+            You currently have no profile saved. Please create your profile.
+            <div class="buttons">
+              <div class="button">Edit my profile</div>
+            </div>
+          </div>
+          
+          <div class="message user-message">
+            Edit my profile
+          </div>
+          
+          <div class="message bot-message">
+            Let's set up your profile! I'll ask you a few questions.
+            
+            Question 1: What is your nickname in the family?
+          </div>
+          
+          <div class="message user-message">
+            Ibu
+          </div>
+
+          <div class="message bot-message">
+            Question 2: Select a role.
+            <div class="buttons">
+              <div class="button">Parent</div>
+              <div class="button">Child</div>
+            </div>
+          </div>
+
+          <div class="message bot-message">
+            You have selected <b>Parent</b>.
+          </div>
+          
+          <div class="message bot-message">
+            Question 3: When is your date of birth? (DD-MM-YYYY)
+          </div>
+          
+          <div class="message user-message">
+            20-04-1969
+          </div>
+
+          <div class="message bot-message">
+            Question 4: What are your hobbies?
+          </div>
+          
+          <div class="message user-message">
+            Nature, cycling, gardening
+          </div>
+          
+          <div class="message bot-message">
+            Question 5: What food do you like to eat?
+          </div>
+          
+          <div class="message user-message">
+            Nasi Kerabu, Ayam Penyet
+          </div>
+          
+          <div class="message bot-message">
+            Question 6: What food do you dislike to eat?
+          </div>
+          
+          <div class="message user-message">
+            Crispy Kunafa, Spuds
+          </div>
+
+          <div class="message bot-message">
+            Question 7: What is your email?
+          </div>
+          
+          <div class="message user-message">
+            hajjahmaimunah69@gmail.com
+          </div>
+          
+          <div class="message bot-message">
+            Thanks! Your profile has been saved successfully.
+            
             <div class="profile-card">
               <div class="profile-field">
-                <span class="profile-label">Name:</span> Muhammad Dzul
+                <span class="profile-label">Nickname:</span> Ibu
               </div>
               <div class="profile-field">
-                <span class="profile-label">Email:</span> dzul@gmail.com
+                <span class="profile-label">Role:</span> Parent
               </div>
               <div class="profile-field">
-                <span class="profile-label">Date of Birth:</span> 05/06/1997
+                <span class="profile-label">Date of Birth:</span> 20-04-1969
               </div>
               <div class="profile-field">
-                <span class="profile-label">Role:</span> Child
+                <span class="profile-label">Hobbies:</span> Nature, cycling, gardening
               </div>
               <div class="profile-field">
-                <span class="profile-label">Parent ID:</span> A8372382
+                <span class="profile-label">Food likes:</span> Nasi Kerabu, Ayam Penyet
               </div>
               <div class="profile-field">
-                <span class="profile-label">Food likes:</span> Nasi lemak, roti prata, laksa
+                <span class="profile-label">Food dislikes:</span> Crispy Kunafa, Spuds
               </div>
               <div class="profile-field">
-                <span class="profile-label">Food dislikes:</span> Durian, bitter gourd
+                <span class="profile-label">Email:</span> hajjahmaimunah69@gmail.com
               </div>
               <div class="profile-field">
-                <span class="profile-label">Allergies:</span> Shellfish
+                <span class="profile-label">Parent-ID:</span> 43217289232
               </div>
-            </div>
-            <div class="buttons">
-              <div class="button">Edit Profile</div>
-              <div class="button">Back to Main Menu</div>
             </div>
           </div>
         </div>
@@ -282,6 +366,146 @@ In today's busy world, I'm here to help your family stay connected, celebrate tr
         </div>
       </div>
       
+      <!-- Individual Chat as a Child -->
+      <div class="phone">
+        <div class="phone-header">
+          KeluargAI
+          <div class="phone-subheader">bot</div>
+        </div>
+        <div class="chat-container">
+          <div class="message bot-intro">
+            Selamat datang! I'm KeluargAI, your family companion designed to strengthen the bonds between families in Singapore. <br><br>
+In today's busy world, I'm here to help your family stay connected, celebrate traditions, and create meaningful moments together. <br><br>Whether you're looking for activities to do as a family, or ways to connect across generations, I'm here to assist.
+          </div>
+          <div class="message message-date">March 21</div>
+          <div class="message bot-message">
+            Use /profile to view or edit your personal profile.
+          </div>
+          
+          <div class="message user-message">
+            /profile
+          </div>
+          
+          <div class="message bot-message">
+            Profile Menu:
+            <div class="buttons">
+              <div class="button">View my profile</div>
+              <div class="button">Edit my profile</div>
+              <div class="button">Exit menu</div>
+            </div>
+          </div>
+          
+          <div class="message user-message">
+            View my profile
+          </div>
+          
+          <div class="message bot-message">
+            You currently have no profile saved. Please create your profile.
+            <div class="buttons">
+              <div class="button">Edit my profile</div>
+            </div>
+          </div>
+          
+          <div class="message user-message">
+            Edit my profile
+          </div>
+          
+          <div class="message bot-message">
+            Let's set up your profile! I'll ask you a few questions.
+            
+            Question 1: What is your nickname in the family?
+          </div>
+          
+          <div class="message user-message">
+            Abang
+          </div>
+
+          <div class="message bot-message">
+            Question 2: Select a role.
+            <div class="buttons">
+              <div class="button">Parent</div>
+              <div class="button">Child</div>
+            </div>
+          </div>
+
+          <div class="message bot-message">
+            You have selected <b>child</b>.
+          </div>
+          
+          <div class="message bot-message">
+            Question 3: What is your parent-ID? Your parent should be given a parent-ID as reference code.
+          </div>
+          
+          <div class="message user-message">
+            43217289232
+          </div>
+
+          <div class="message bot-message">
+            Question 4: When is your date of birth? (DD-MM-YYYY)
+          </div>
+          
+          <div class="message user-message">
+            24-03-1995
+          </div>
+
+          <div class="message bot-message">
+            Question 5: What are your hobbies?
+          </div>
+          
+          <div class="message user-message">
+            Gaming, hiking, photography
+          </div>
+          
+          <div class="message bot-message">
+            Question 6: What food do you like to eat?
+          </div>
+          
+          <div class="message user-message">
+            Nasi lemak, roti prata, laksa
+          </div>
+          
+          <div class="message bot-message">
+            Question 7: What food do you dislike to eat?
+          </div>
+          
+          <div class="message user-message">
+            Durian, bitter gourd
+          </div>
+          
+          <div class="message bot-message">
+            Thanks! Your profile has been saved successfully.
+            
+            <div class="profile-card">
+              <div class="profile-field">
+                <span class="profile-label">Nickname:</span> Abang
+              </div>
+              <div class="profile-field">
+                <span class="profile-label">Role:</span> Child
+              </div>
+              <div class="profile-field">
+                <span class="profile-label">Parent-ID:</span> 43217289232
+              </div>
+              <div class="profile-field">
+                <span class="profile-label">Date of Birth:</span> 24-03-1995
+              </div>
+              <div class="profile-field">
+                <span class="profile-label">Hobbies:</span> Gaming, hiking, photography
+              </div>
+              <div class="profile-field">
+                <span class="profile-label">Food likes:</span> Nasi lemak, roti prata, laksa
+              </div>
+              <div class="profile-field">
+                <span class="profile-label">Food dislikes:</span> Durian, bitter gourd
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="phone-footer">
+          <div class="input-field">Type a message...</div>
+          <div class="send-button">➤</div>
+        </div>
+      </div>
+
       <!-- Group Chat -->
       <div class="phone">
         <div class="phone-header">
@@ -289,15 +513,12 @@ In today's busy world, I'm here to help your family stay connected, celebrate tr
           <div class="phone-subheader">5 members</div>
         </div>
         <div class="chat-container">
-          <div class="message bot-message">
-            Selamat pagi Keluarga Bahagia! I'm KeluargaAI, your family assistant. 
+          <div class="message bot-message">            Selamat pagi Keluarga Bahagia! I'm KeluargAI, your family assistant. 
             <br><br>
             Use my commands to help plan family meals, activities, and reflection time together.
             <br><br>🍚 /makan - Decide what and where to eat
             <br><br>📅 /jomxz - Find activities based on interests
-            <br><br>💬 /sembang - Schedule family reflection time
-            <br><br>👤 /profile - View and update your family profile
-          </div>
+            <br><br>💬 /sembang - Schedule family reflection time</div>
           
           <div class="message user-message">
             /makan
@@ -348,225 +569,54 @@ In today's busy world, I'm here to help your family stay connected, celebrate tr
             3. <b>East Coast Park Cycling</b><br>
             • Outdoor activity for everyone<br>
             • Combines Ibu's cycling hobby<br>
-            • Food options nearby that match family preferences<br>
-            <br>
-            Which activity sounds most interesting to everyone?
+            • Food options nearby that match family preferences
+            <br><br>
+            Would you like more options?
           </div>
           
-          <div class="message user-message">
-            /sembang
-            <div class="timestamp">Ibu - 8:15 PM</div>
-          </div>
-          
-          <div class="message bot-message">
-            You've initiated family reflection time. First, let's set up a schedule for regular reflections.
-            
-            How often would you like to have family reflection time?
-            <div class="buttons">
-              <div class="button">Daily</div>
-              <div class="button">Weekly</div>
-              <div class="button">Monthly</div>
-              <div class="button">Custom</div>
-            </div>
-          </div>
-          
-          <div class="message user-message">
-            Weekly
-            <div class="timestamp">Ibu - 8:16 PM</div>
-          </div>
-          
-          <div class="message bot-message">
-            Which day of the week works best for everyone?
-            <div class="buttons">
-              <div class="button">Monday</div>
-              <div class="button">Tuesday</div>
-              <div class="button">Wednesday</div>
-              <div class="button">Thursday</div>
-              <div class="button">Friday</div>
-              <div class="button">Saturday</div>
-              <div class="button">Sunday</div>
-            </div>
-          </div>
-          
-          <div class="message user-message">
-            Sunday
-            <div class="timestamp">Ibu - 8:17 PM</div>
-          </div>
-          
-          <div class="message bot-message">
-            What time would be good for everyone?
-            <div class="buttons">
-              <div class="button">7:00 PM</div>
-              <div class="button">8:00 PM</div>
-              <div class="button">9:00 PM</div>
-              <div class="button">Custom time</div>
-            </div>
-          </div>
-          
-          <div class="message user-message">
-            7:00 PM
-            <div class="timestamp">Ibu - 8:18 PM</div>
-          </div>
-          
-          <div class="message bot-message">
-            Great! I've scheduled family reflection time for every Sunday at 7:00 PM.
-            
-            <div class="schedule-info">
-              ✓ Family Reflection: Every Sunday at 7:00 PM
-            </div>
-            <br>
-            Let's start with today's reflection. Everyone please share:
-            <br>
-            1. One highlight from your week<br>
-            2. One challenge you faced<br>
-            3. Something you're looking forward to next week<br>
-            <br>
-            Who would like to start?
-          </div>
-          
-          <div class="message user-message">
-            My highlight was our family breakfast on Wednesday. Challenge was the traffic jam on Thursday that made me late for work. Looking forward to visiting nenek next weekend!
-            <div class="timestamp">Ayah - 8:20 PM</div>
-          </div>
-          
-          <div class="message bot-message">
-            Thank you for sharing, Ayah! Who would like to go next?
-          </div>
         </div>
         <div class="phone-footer">
           <div class="input-field">Type a message...</div>
           <div class="send-button">➤</div>
         </div>
       </div>
-      
-      <!-- New Chat Page -->
+
+      <!-- Individual Chat as a Parent -->
       <div class="phone">
         <div class="phone-header">
-          KeluargaAI
+          KeluargAI
           <div class="phone-subheader">bot</div>
         </div>
         <div class="chat-container">
-          <div class="chat-page">
-            <div class="message bot-message">
-              <p>Selamat datang! I'm KeluargaAI, your family companion designed to strengthen the bonds between families in Singapore.</p>
-              <p>In today's busy world, I'm here to help your family stay connected, celebrate traditions, and create meaningful moments together.</p>
-              <p>Whether you're looking for activities to do as a family, or ways to connect across generations, I'm here to assist. </p>
-              <div class="timestamp">KeluargaAI - 8:15 PM</div>
-            </div>
-            <div class="message bot-message">
-              <p> Let's set up your profile! I'll ask you a few questions. Question 1: Can you enter your first name?
-                </p>
-              <div class="timestamp">KeluargaAI - 8:16 PM</div>
-            </div>
-            <div class="message user-message">
-              <p>Muhammad</p>
-              <div class="timestamp">You - 8:17 PM</div>
-            </div>
-            <div class="message bot-message">
-              <p>Question 2: Can you enter your last name?</p>
-              <div class="timestamp">KeluargaAI - 8:16 PM</div>
-            </div>
-            <div class="message user-message">
-              <p>Dzul</p>
-              <div class="timestamp">You - 8:17 PM</div>
-            </div>
-            <div class="message bot-message">
-              <p>Question 3: Can you enter your email?</p>
-              <div class="timestamp">KeluargaAI - 8:18 PM</div>
-            </div>
-            <div class="message user-message">
-              <p>dzul@gmail.com</p>
-              <div class="timestamp">You - 8:18 PM</div>
-            </div>
-            <div class="message bot-message">
-              <p>Question 4: Please input your Date Of Birth:</p>
-              <div class="timestamp">KeluargaAI - 8:19 PM</div>
-            </div>
-            <div class="message user-message">
-              <p>05/06/1997</p>
-              <div class="timestamp">You - 8:19 PM</div>
-            </div>
-            <div class="message bot-message">
-              <p>Question 5: Are you a parent or child?</p>
-              <div class="buttons">
-                <div class="button">Parent</div>
-                <div class="button">Child</div>
-              </div>
-              <div class="timestamp">KeluargaAI - 8:20 PM</div>
-            </div>
-            <div class="message user-message">
-              <p>Child</p>
-              <div class="timestamp">You - 8:20 PM</div>
-            </div>
-            <div class="message bot-message">
-              <p>Question 6: What food do you like to eat?</p>
-              <div class="timestamp">KeluargaAI - 8:21 PM</div>
-            </div>
-            <div class="message user-message">
-              <p>Nasi lemak, roti prata, laksa</p>
-              <div class="timestamp">You - 8:22 PM</div>
-            </div>
-            <div class="message bot-message">
-              <p>Question 7: What food do you dislike to eat?</p>
-              <div class="timestamp">KeluargaAI - 8:23 PM</div>
-            </div>
-            <div class="message user-message">
-              <p>Durian, bitter gourd</p>
-              <div class="timestamp">You - 8:24 PM</div>
-            </div>
-            <div class="message bot-message">
-              <p>Question 8: What are you allergic to?</p>
-              <div class="timestamp">KeluargaAI - 8:25 PM</div>
-            </div>
-            <div class="message user-message">
-              <p>Shellfish</p>
-              <div class="timestamp">You - 8:26 PM</div>
-            </div>
-            <div class="message bot-message">
-              <p>Question 9: What is your parent id? (Please enter)</p>
-              <div class="timestamp">KeluargaAI - 8:27 PM</div>
-            </div>
-            <div class="message user-message">
-              <p>A8372382</p>
-              <div class="timestamp">You - 8:28 PM</div>
-            </div>
-            <div class="message bot-message">
-              <p>Thank you! Here is the summary of your profile:</p>
-              <div class="profile-card">
-                <div class="profile-field">
-                  <span class="profile-label">Name:</span> Muhammad Dzul
-                </div>
-                <div class="profile-field">
-                  <span class="profile-label">Email:</span> dzul@gmail.com
-                </div>
-                <div class="profile-field">
-                  <span class="profile-label">Date of Birth:</span> 05/06/1997
-                </div>
-                <div class="profile-field">
-                  <span class="profile-label">Role:</span> Child
-                </div>
-                <div class="profile-field">
-                  <span class="profile-label">Parent ID:</span> A8372382
-                </div>
-                <div class="profile-field">
-                  <span class="profile-label">Food likes:</span> Nasi lemak, roti prata, laksa
-                </div>
-                <div class="profile-field">
-                  <span class="profile-label">Food dislikes:</span> Durian, bitter gourd
-                </div>
-                <div class="profile-field">
-                  <span class="profile-label">Allergies:</span> Shellfish
-                </div>
-              </div>
-              <div class="timestamp">KeluargaAI - 8:30 PM</div>
-            </div>
+          <div class="message bot-message">
+            It's 9PM! Let's begin the journaling session.
+            <br><br>
+            How do you feel about your day?
+            <br><br>
+            Example 1: It was awesome! I scored a hattrick during PE and we had extra recess because everyone was quiet during silent reading.
+            <br><br>
+            Example 2: Bad. Jessica didn't want to eat with me during recess and I got scolded by Mr Hisyam for not completing my homework.
+            <br><br>
+            Example 3: Boring. My favourite teacher, Mdm Halimah, was on MC and the relief teacher made us do worksheets all day.
+ 
           </div>
+          
+          <div class="message user-message">
+            It was alright. I had fun playing dodgeball with my classmates during PE, but we were made to stay back during recess as one of my classmates got injured. We only had 10 minutes to eat.
+          </div>
+          
+          <div class="message bot-message">
+            Thanks for now.
+          </div>
+          
+          
         </div>
         <div class="phone-footer">
           <div class="input-field">Type a message...</div>
           <div class="send-button">➤</div>
         </div>
       </div>
+
     </div>
     
     <h2 class="section-title">Key Features</h2>
