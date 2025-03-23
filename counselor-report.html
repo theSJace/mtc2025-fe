@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Child Development Report - Counselor View</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    :root {
+      --primary-color: #4361ee;
+      --primary-light: #eef2ff;
+      --secondary-color: #3a0ca3;
+      --accent-color: #4cc9f0;
+      --warning-color: #f72585;
+      --success-color: #4cc9a0;
+      --neutral-color: #f8f9fa;
+      --text-dark: #2b2d42;
+      --text-light: #8d99ae;
+      --white: #ffffff;
+      --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    }
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f2f5;
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+    
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 30px 20px;
+    }
+    
+    .header {
+      text-align: center;
+      margin-bottom: 40px;
+      padding: 30px;
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      color: var(--white);
+      border-radius: 15px;
+      box-shadow: var(--shadow-lg);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .header::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 60%);
+      pointer-events: none;
+    }
+    
+    .header h1 {
+      margin-bottom: 10px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: 2.5rem;
+      letter-spacing: -0.5px;
+    }
+    
+    .header p {
+      margin-top: 0;
+      opacity: 0.9;
+      font-size: 1.1rem;
+      font-weight: 300;
+    }
+    
+    .report-section {
+      background-color: var(--white);
+      border-radius: 15px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: var(--shadow);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .report-section:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+    }
+    
+    .section-title {
+      color: var(--primary-color);
+      border-bottom: 2px solid var(--primary-light);
+      padding-bottom: 15px;
+      margin-top: 0;
+      margin-bottom: 25px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      font-size: 1.6rem;
+      display: flex;
+      align-items: center;
+    }
+    
+    .section-title i {
+      margin-right: 12px;
+      font-size: 1.4rem;
+      background-color: var(--primary-light);
+      color: var(--primary-color);
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+    }
+    
+    .counselor-info {
+      display: flex;
+      align-items: center;
+      margin-bottom: 25px;
+      background-color: var(--neutral-color);
+      border-radius: 12px;
+      padding: 20px;
+    }
+    
+    .counselor-avatar {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #a5b4fc, #818cf8);
+      margin-right: 25px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 40px;
+      color: var(--white);
+      font-weight: 600;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border: 4px solid white;
+    }
+    
+    .counselor-details {
+      flex: 1;
+    }
+    
+    .counselor-details h3 {
+      margin-top: 0;
+      color: var(--primary-color);
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+    
+    .counselor-details p {
+      margin-bottom: 10px;
+      color: var(--text-dark);
+    }
+    
+    .counselor-contact {
+      margin-top: 15px;
+      padding: 15px;
+      background-color: var(--white);
+      border-radius: 10px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    }
+    
+    .counselor-contact p {
+      margin: 8px 0;
+      display: flex;
+      align-items: center;
+    }
+    
+    .counselor-contact i {
+      margin-right: 10px;
+      color: var(--primary-color);
+      width: 20px;
+      text-align: center;
+    }
+    
+    .sentiment-container {
+      background-color: var(--primary-light);
+      padding: 25px;
+      border-radius: 12px;
+      margin: 20px 0;
+    }
+    
+    .sentiment-meter {
+      height: 25px;
+      background-color: rgba(255, 255, 255, 0.5);
+      border-radius: 15px;
+      margin: 20px 0;
+      position: relative;
+      overflow: hidden;
+      box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    
+    .sentiment-value {
+      height: 100%;
+      background: linear-gradient(to right, var(--warning-color), #f9c74f, var(--success-color));
+      border-radius: 15px;
+      width: 65%;
+      transition: width 1s ease-in-out;
+    }
+    
+    .sentiment-marker {
+      position: absolute;
+      top: -10px;
+      width: 4px;
+      height: 45px;
+      background-color: var(--secondary-color);
+      transform: translateX(-50%);
+    }
+    
+    .sentiment-labels {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 10px;
+      font-size: 14px;
+      color: var(--text-dark);
+      font-weight: 500;
+    }
+    
+    .sentiment-score {
+      position: absolute;
+      top: -30px;
+      left: 65%;
+      transform: translateX(-50%);
+      background-color: var(--secondary-color);
+      color: white;
+      padding: 3px 10px;
+      border-radius: 15px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+    
+    .development-timeline {
+      margin: 30px 0;
+      position: relative;
+    }
+    
+    .development-timeline::before {
+      content: '';
+      position: absolute;
+      left: 100px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background-color: var(--primary-light);
+    }
+    
+    .timeline-item {
+      display: flex;
+      margin-bottom: 30px;
+      position: relative;
+    }
+    
+    .timeline-date {
+      width: 100px;
+      padding-right: 20px;
+      text-align: right;
+      font-weight: 600;
+      color: var(--primary-color);
+      font-size: 0.9rem;
+    }
+    
+    .timeline-content {
+      flex: 1;
+      padding-left: 25px;
+      padding-bottom: 15px;
+      position: relative;
+    }
+    
+    .timeline-content:before {
+      content: "";
+      position: absolute;
+      left: -6px;
+      top: 0;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background-color: var(--white);
+      border: 3px solid var(--primary-color);
+      z-index: 1;
+    }
+    
+    .timeline-content h4 {
+      margin-top: 0;
+      color: var(--secondary-color);
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.1rem;
+    }
+    
+    .timeline-content p {
+      background-color: var(--neutral-color);
+      padding: 15px;
+      border-radius: 8px;
+      margin-top: 10px;
+    }
+    
+    .strategy-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+      margin-top: 25px;
+    }
+    
+    .strategy-card {
+      background-color: var(--white);
+      border-left: 5px solid var(--primary-color);
+      padding: 20px;
+      margin-bottom: 15px;
+      border-radius: 10px;
+      box-shadow: var(--shadow);
+      transition: transform 0.2s ease;
+    }
+    
+    .strategy-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+    }
+    
+    .strategy-card h4 {
+      margin-top: 0;
+      color: var(--primary-color);
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+    }
+    
+    .strategy-card h4 i {
+      margin-right: 10px;
+      font-size: 1rem;
+      color: var(--primary-color);
+    }
+    
+    .strategy-card p {
+      margin-bottom: 0;
+      margin-top: 10px;
+      color: var(--text-dark);
+    }
+    
+    .child-info {
+      display: flex;
+      align-items: center;
+      margin-bottom: 25px;
+      background-color: var(--primary-light);
+      padding: 20px;
+      border-radius: 12px;
+    }
+    
+    .child-avatar {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #4cc9f0, #4361ee);
+      margin-right: 25px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 35px;
+      color: var(--white);
+      font-weight: 600;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border: 4px solid white;
+    }
+    
+    .child-details {
+      flex: 1;
+    }
+    
+    .child-details h3 {
+      margin-top: 0;
+      color: var(--secondary-color);
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+    
+    .child-details p {
+      margin: 5px 0;
+      display: flex;
+      align-items: center;
+    }
+    
+    .child-details p i {
+      margin-right: 10px;
+      color: var(--primary-color);
+      width: 20px;
+      text-align: center;
+    }
+    
+    .key-observations {
+      background-color: var(--white);
+      border-radius: 10px;
+      padding: 20px;
+      margin-top: 20px;
+      box-shadow: var(--shadow);
+    }
+    
+    .key-observations h4 {
+      color: var(--primary-color);
+      margin-top: 0;
+      margin-bottom: 15px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+    }
+    
+    .key-observations h4 i {
+      margin-right: 10px;
+    }
+    
+    .key-observations ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+    
+    .key-observations li {
+      padding: 8px 0;
+      border-bottom: 1px solid var(--primary-light);
+      display: flex;
+      align-items: center;
+    }
+    
+    .key-observations li:last-child {
+      border-bottom: none;
+    }
+    
+    .key-observations li i {
+      margin-right: 10px;
+      color: var(--primary-color);
+    }
+    
+    .next-steps {
+      background-color: var(--primary-light);
+      border-radius: 10px;
+      padding: 20px;
+      margin-top: 20px;
+    }
+    
+    .next-steps h4 {
+      color: var(--primary-color);
+      margin-top: 0;
+      margin-bottom: 15px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+    }
+    
+    .next-steps h4 i {
+      margin-right: 10px;
+    }
+    
+    .next-steps ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+    
+    .next-steps li {
+      padding: 8px 0;
+      display: flex;
+      align-items: center;
+    }
+    
+    .next-steps li i {
+      margin-right: 10px;
+      color: var(--primary-color);
+      font-size: 1.1rem;
+    }
+    
+    .report-footer {
+      text-align: center;
+      margin-top: 40px;
+      padding: 20px;
+      color: var(--text-light);
+      font-size: 14px;
+      background-color: var(--white);
+      border-radius: 15px;
+      box-shadow: var(--shadow);
+    }
+    
+    .report-footer p:first-child {
+      font-weight: 500;
+      color: var(--text-dark);
+    }
+    
+    .confidential-badge {
+      display: inline-block;
+      background-color: var(--warning-color);
+      color: white;
+      padding: 5px 15px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      margin-top: 10px;
+    }
+    
+    @media (max-width: 768px) {
+      .counselor-info,
+      .child-info {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      
+      .counselor-avatar,
+      .child-avatar {
+        margin-right: 0;
+        margin-bottom: 20px;
+      }
+      
+      .timeline-item {
+        flex-direction: column;
+      }
+      
+      .timeline-date {
+        width: 100%;
+        text-align: left;
+        padding-right: 0;
+        padding-bottom: 10px;
+      }
+      
+      .development-timeline::before {
+        left: 20px;
+      }
+      
+      .timeline-content {
+        padding-left: 40px;
+      }
+      
+      .timeline-content:before {
+        left: 12px;
+      }
+      
+      .strategy-cards {
+        grid-template-columns: 1fr;
+      }
+      
+      .header h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Child Development Report</h1>
+      <p>Comprehensive assessment and recommendations for parents</p>
+    </div>
+    
+    <div class="report-section">
+      <h2 class="section-title"><i class="fas fa-child"></i>Child Information</h2>
+      <div class="child-info">
+        <div class="child-avatar">LL</div>
+        <div class="child-details">
+          <h3>Lim Li Wei</h3>
+          <p><i class="fas fa-birthday-cake"></i>Age: 8 years old</p>
+          <p><i class="fas fa-school"></i>School: Nanyang Primary School</p>
+          <p><i class="fas fa-graduation-cap"></i>Grade: Primary 2</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="report-section">
+      <h2 class="section-title"><i class="fas fa-heart"></i>Emotional Sentiment Analysis</h2>
+      <p>Based on our recent sessions and assessments, Li Wei's emotional well-being is currently at a moderate level with some areas of concern.</p>
+      
+      <div class="sentiment-container">
+        <div class="sentiment-meter">
+          <div class="sentiment-value" style="width: 65%;"></div>
+          <div class="sentiment-marker" style="left: 65%;"></div>
+          <div class="sentiment-score">65%</div>
+        </div>
+        <div class="sentiment-labels">
+          <span><i class="fas fa-exclamation-circle"></i> Concerning</span>
+          <span><i class="fas fa-arrow-right"></i> Moderate</span>
+          <span><i class="fas fa-check-circle"></i> Excellent</span>
+        </div>
+      </div>
+      
+      <div class="key-observations">
+        <h4><i class="fas fa-search"></i>Key Observations</h4>
+        <ul>
+          <li><i class="fas fa-exclamation-triangle"></i>Shows signs of anxiety during class presentations and group activities</li>
+          <li><i class="fas fa-shield-alt"></i>Demonstrates resilience when facing academic challenges, especially in Mathematics</li>
+          <li><i class="fas fa-comment-slash"></i>Has difficulty expressing emotions verbally in both English and Mandarin</li>
+          <li><i class="fas fa-palette"></i>Shows enthusiasm for creative activities and coding enrichment classes</li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="report-section">
+      <h2 class="section-title"><i class="fas fa-chart-line"></i>Development Journey</h2>
+      <div class="development-timeline">
+        <div class="timeline-item">
+          <div class="timeline-date">January 15, 2025</div>
+          <div class="timeline-content">
+            <h4>Initial Assessment</h4>
+            <p>Li Wei showed signs of social withdrawal and reluctance to participate in group activities. Limited eye contact during the session. Parents reported concerns about academic pressure and social integration.</p>
+          </div>
+        </div>
+        
+        <div class="timeline-item">
+          <div class="timeline-date">February 3, 2025</div>
+          <div class="timeline-content">
+            <h4>Progress Check</h4>
+            <p>Improvement in communication skills. Li Wei began sharing personal stories and expressing preferences. Still showing hesitation in unfamiliar settings, particularly during CCA activities.</p>
+          </div>
+        </div>
+        
+        <div class="timeline-item">
+          <div class="timeline-date">February 28, 2025</div>
+          <div class="timeline-content">
+            <h4>Emotional Regulation Session</h4>
+            <p>Introduced coping strategies for managing frustration. Li Wei responded positively to breathing exercises and demonstrated ability to identify emotions using visual aids. Discussed strategies for managing exam anxiety.</p>
+          </div>
+        </div>
+        
+        <div class="timeline-item">
+          <div class="timeline-date">March 20, 2025</div>
+          <div class="timeline-content">
+            <h4>Current Assessment</h4>
+            <p>Li Wei has made significant progress in emotional awareness. He can now identify and label his emotions more accurately. Social interaction with peers remains an area for continued focus, especially during recess and group work.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="report-section">
+      <h2 class="section-title"><i class="fas fa-lightbulb"></i>Recommended Strategies for Parents</h2>
+      
+      <div class="strategy-cards">
+        <div class="strategy-card">
+          <h4><i class="fas fa-comment-dots"></i>Emotion Labeling Practice</h4>
+          <p>Help Li Wei identify and label his emotions throughout the day. Use a feelings chart with facial expressions to make this concrete. Ask questions like "How are you feeling right now?" and validate his responses in both English and Mandarin.</p>
+        </div>
+        
+        <div class="strategy-card">
+          <h4><i class="fas fa-users"></i>Structured Social Interactions</h4>
+          <p>Arrange playdates with one or two classmates in a comfortable environment like East Coast Park or Gardens by the Bay Children's Garden. Start with short, activity-focused interactions (30-45 minutes) and gradually increase duration as comfort grows.</p>
+        </div>
+        
+        <div class="strategy-card">
+          <h4><i class="fas fa-calendar-alt"></i>Predictable Routines</h4>
+          <p>Maintain consistent daily routines to reduce anxiety. Use visual schedules at home to help Li Wei understand what to expect. Give advance notice before transitions between activities, especially during busy weekends and exam periods.</p>
+        </div>
+        
+        <div class="strategy-card">
+          <h4><i class="fas fa-brain"></i>Mindfulness Activities</h4>
+          <p>Practice simple mindfulness exercises together for 5 minutes daily. Focus on breathing, body awareness, or sensory experiences. The "MindChamps Mindfulness" app has age-appropriate guided sessions designed for Singapore students.</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="report-section">
+      <h2 class="section-title"><i class="fas fa-user-md"></i>Counselor Information</h2>
+      <div class="counselor-info">
+        <div class="counselor-avatar">DT</div>
+        <div class="counselor-details">
+          <h3>Dr. Tan Mei Ling</h3>
+          <p><i class="fas fa-award"></i>Child Development Specialist</p>
+          <p><i class="fas fa-certificate"></i>Singapore Association for Counselling - Registered Counsellor</p>
+          <div class="counselor-contact">
+            <p><i class="fas fa-envelope"></i><strong>Email:</strong> dr.tan@childwellbeing.sg</p>
+            <p><i class="fas fa-phone-alt"></i><strong>Phone:</strong> +65 9123-4567</p>
+            <p><i class="fas fa-clock"></i><strong>Office Hours:</strong> Monday-Friday, 9:00 AM - 6:00 PM</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="next-steps">
+        <h4><i class="fas fa-tasks"></i>Next Steps</h4>
+        <ul>
+          <li><i class="fas fa-calendar-check"></i>Schedule a follow-up session in 3 weeks to review progress before the Term 2 exams</li>
+          <li><i class="fas fa-users"></i>Consider joining our parent support group that meets every second Tuesday at Novena Medical Centre</li>
+          <li><i class="fas fa-clipboard-list"></i>Complete the daily emotion log provided in your SingHealth Parent Portal</li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="report-footer">
+      <p>This report was generated on March 23, 2025 | Child Wellbeing Centre Singapore</p>
+      <p class="confidential-badge">Confidential information - For parent/guardian use only</p>
+    </div>
+  </div>
+</body>
+</html>
